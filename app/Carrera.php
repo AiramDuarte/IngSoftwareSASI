@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Idioma extends Model
+class Carrera extends Model
 {
        protected $fillable = [
-   		'noUnico','nombre', 'noCurso', 
-   		   ];
+   		'noUnico','nombre'
+   ];
 }
