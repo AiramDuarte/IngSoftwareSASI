@@ -10,7 +10,7 @@ class Alumno extends Model
    		'matricula','nombre', 'semestre', 'porcentajeCarrera','disponiblidad'
    ];
 
-   public function carrera(){
+   public function carreras(){
 
    	this->belongsToMany('App\Carrera', 'carrera_alumno');
    }
