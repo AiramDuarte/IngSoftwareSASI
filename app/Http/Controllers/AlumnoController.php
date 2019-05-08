@@ -6,5 +6,9 @@ use Illuminate\Http\Request;
 
 class AlumnoController extends Controller
 {
-    //
+<<<<<<< HEAD
+    //controlo el alumnoooooo AAAAAAAA
+=======
+    //este es el paso del trolleoooo AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+>>>>>>> feature/Acosta
 }
