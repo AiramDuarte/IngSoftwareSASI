@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Curso extends Model
 {
-    //ya puedo programar
+      protected $fillable = [
+   		'noUnico','horario', 'nivel', 'capacidad'
+   	];
 }
