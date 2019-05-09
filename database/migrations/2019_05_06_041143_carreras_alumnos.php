@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CarreraAlumno extends Migration
+class CarrerasAlumnos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CarreraAlumno extends Migration
      */
     public function up()
     {
-        Schema::create('carrera_alumno', function(Blueprint $table)
+        Schema::create('carreras_alumnos', function(Blueprint $table)
         {
             $table->integer('carrera_noUnico')->unsigned();
            $table->foreign('carrera_noUnico')->references('noUnico')->on('carrera')->onDelete('cascade');
@@ -31,6 +31,6 @@ class CarreraAlumno extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('carrera_alumno');
+        Schema::dropIfExists('carreras_alumnos');
     }
 }
