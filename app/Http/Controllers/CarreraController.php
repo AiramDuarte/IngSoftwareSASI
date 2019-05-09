@@ -64,7 +64,7 @@ class CarreraController extends Controller
     		return response()->json(['mensaje' => 'No se encontró el recurso solicitado'], 404);
     	}
 
-    	if($carrera->libros->isEmpty()) {
+    	if($carrera->alumnos->isEmpty()) {
     		return response()->json(['mensaje' => 'No se encontraron alumnos asociados a la carrera especificada'], 404);
     	}
 
