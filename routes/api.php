@@ -27,4 +27,7 @@ Route::get('carreras', 'CarreraController@listarCarreras');
 Route::get('carreras/{carrera}', 'CarreraController@obtenerCarrera');
 Route::post('carreras', 'CarreraController@agregarCarrera');
 Route::put('carreras/{carrera}', 'CarreraController@actualizarDatosCarrera');
-Route::get('carreras/{carrera}/alumnos', 'CarreraController@obtenerCarreraAlumnos');//
+Route::get('carreras/{carrera}/alumnos', 'CarreraController@obtenerCarreraAlumnos');
+//metodos de alumno
+Route::get('alumnos', 'AlumnoController@listarAlumnos');
+Route::get('alumnos/{alumno}', 'AlumnoController@obtenerAlumno');
