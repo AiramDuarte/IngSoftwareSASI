@@ -13,7 +13,7 @@ class IdiomasAlumnos extends Migration
      */
     public function up()
     {
-          Schema::create('carrera_alumno', function(Blueprint $table)
+          Schema::create('idiomas_alumnos', function(Blueprint $table)
         {
            $table->integer('idioma_noUnico')->unsigned();
            $table->foreign('idioma_noUnico')->references('noUnico')->on('idioma')->onDelete('cascade');

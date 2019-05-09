@@ -13,14 +13,14 @@ class CreateAlumnosTable extends Migration
      */
     public function up()
     {
-        //Schema::create('alumnos', function (Blueprint $table) {
-          //  $table->bigIncrements('matricula');
-          //  $table->string('nombre');
-         //   $table->int('semestre');
-         //   $table->float('porcentajeCarrera');
-         //   $table->string('disponiblidad');
-         //   $table->timestamps();
-      //  });
+        Schema::create('alumnos', function (Blueprint $table) {
+            $table->increments('matricula');
+            $table->string('nombre');
+            $table->integer('semestre');
+            $table->float('porcentajeCarrera');
+            $table->string('disponiblidad');
+            $table->timestamps();
+        });
     }
 
     /**

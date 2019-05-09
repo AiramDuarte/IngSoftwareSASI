@@ -15,8 +15,8 @@ class CarrerasAlumnos extends Migration
     {
         Schema::create('carreras_alumnos', function(Blueprint $table)
         {
-            $table->integer('carrera_noUnico')->unsigned();
-           $table->foreign('carrera_noUnico')->references('noUnico')->on('carrera')->onDelete('cascade');
+            $table->integer('carreras_noUnico')->unsigned();
+           $table->foreign('carreras_noUnico')->references('noUnico')->on('carreras')->onDelete('cascade');
 
            $table->integer('alumno_matricula')->unsigned();
             $table->foreign('alumno_matricula')->references('matricula')->on('alumno')->onDelete('cascade');
