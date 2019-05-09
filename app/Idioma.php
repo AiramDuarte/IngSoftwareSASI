@@ -8,9 +8,9 @@ class Idioma extends Model
 {
 
     protected $fillable = [
+	'nUnico',
     	'nombre', 
-		'nUnico',
-		'nCursos',
+		'noCursos',
     ];
 	
 	public function alumnos() {
