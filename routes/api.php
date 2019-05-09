@@ -16,6 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+//Metodos de Curso
+Route::get('cursos', 'CursoController@listarCursos');
+Route::get('cursos/{curso}', 'CursoController@obtenerCurso');
+Route::post('cursos', 'CursoController@agregarCurso');
+Route::put('cursos/{curso}', 'CursoController@actualizarDatosCurso');
+Route::get('cursos/{curso}/idiomas', 'CursoController@obtenerIdiomasCurso');
 //Metodos de Idioma
 Route::get('idiomas', 'IdiomaController@listarIdiomas');
 Route::get('idiomas/{idioma}', 'IdiomaController@obtenerIdioma');
