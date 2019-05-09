@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Idioma extends Model
 {
-       protected $fillable = [
-   		'noUnico','nombre', 'noCurso', 
-   		   ];
+
+    protected $fillable = [
+    	'nombre', 
+		'nUnico',
+		'nCursos',
+    ];
+	
+	public function alumnos() {
+		return $this->belongsToMany('App\Alumno', 'idiomas_alumnos');
+	}
+
 }
