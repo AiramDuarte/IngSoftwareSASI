@@ -8,13 +8,13 @@ class Idioma extends Model
 {
 
     protected $fillable = [
-	'nUnico',
-    	'nombre', 
-		'noCursos',
+    	'nombre', 'noCursos',
     ];
 	
-	public function alumnos() {
-		return $this->belongsToMany('App\Alumno', 'idiomas_alumnos');
-	}
+	//CAMBIO EL DRIAGRAMA
+	
+	//public function alumnos() {
+	//	return $this->belongsToMany('App\Alumno', 'idiomas_alumnos');
+	//}
 
 }

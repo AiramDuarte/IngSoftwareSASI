@@ -16,7 +16,7 @@ class IdiomasAlumnos extends Migration
           Schema::create('carrera_alumno', function(Blueprint $table)
         {
            $table->integer('idioma_noUnico')->unsigned();
-           $table->foreign('idioma_noUnico')->references('noUnico')->on('idioma')->onDelete('cascade');
+           $table->foreign('idioma_noUnico')->references('id')->on('idioma')->onDelete('cascade');
 
            $table->integer('alumno_matricula')->unsigned();
            $table->foreign('alumno_matricula')->references('matricula')->on('alumno')->onDelete('cascade');
