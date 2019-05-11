@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Alumno;
 use App\Idioma;
+use App\Curso;
+
 class IdiomaController extends Controller
 {
     public function listarIdiomas() {
@@ -19,60 +20,60 @@ class IdiomaController extends Controller
     }
 	public function obtenerIdioma($id) {
 
-    	$idioma = Idioma::find($id);
+    	$idiomas = Idioma::find($id);
 
-    	if(!$idioma) {
+    	if(!$idiomas) {
     		return response()->json(['mensaje' => 'No se encontró el recurso solicitado'], 404);
     	}
 
-    	return response()->json($idioma, 200);
+    	return response()->json($idiomas, 200);
     }
 	
 	 public function agregarIdioma(Request $request) {
     	$request->validate([
     		'nombre' => 'string|required',
-    		'noCursos' => 'string|required',
+    		'noCursos' => 'integer|required',
     	]);
 
-    	$idioma = new Idioma([
+    	$idiomas = new Idioma([
     		'nombre' => $request->nombre,
     		'noCursos' => $request->noCursos,
     	]);
 
-    	$idioma->save();
+    	$idiomas->save();
 
     	return response()->json(['mensaje' => 'Datos agregados con éxito'], 201);
     }
 	public function actualizarDatosIdioma(Request $request, $id) {
     	$request->validate([
     		'nombre' => 'string|required',
-    		'noCursos' => 'string|required',
+    		'noCursos' => 'integer|required',
     	]);
 
-		$idioma = Idioma::find($id);
+		$idiomas = Idioma::find($id);
 
-		if(!$idioma) {
+		if(!$idiomas) {
 			return response()->json(['mensaje' => 'No se encontró el recurso solicitado'], 404);
 		}
 
-		$idioma->nombre = $request->nombre;
-		$idioma->noCursos = $request->noCursos;
+		$idiomas->nombre = $request->nombre;
+		$idiomas->noCursos = $request->noCursos;
 
-		$idioma->save();
+		$idiomas->save();
 
 		return response()->json(['mensaje' => 'Datos actualizados con éxito']);
     }
-	public function obtenerAlumnosIdioma($id) {
-    	$idioma = idioma::find($id);
+	public function obtenerCursosIdioma($id) {
+    	$idiomas = idioma::find($id);
 
-    	if(!$idioma) {
+    	if(!$idiomas) {
     		return response()->json(['mensaje' => 'No se encontró el recurso solicitado'], 404);
     	}
 
-    	if($idioma->alumnos->isEmpty()) {
-    		return response()->json(['mensaje' => 'No se encontraron alumnos asociados al idioma especificado'], 404);
+    	if($idiomas->cursos->isEmpty()) {
+    		return response()->json(['mensaje' => 'No se encontraron cursos asociados al idioma especificado'], 404);
     	}
 
-    	return response()->json($idioma->alumnos, 200);
+    	return response()->json($idiomas->cursos, 200);
     }
 }

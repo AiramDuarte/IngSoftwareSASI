@@ -11,10 +11,8 @@ class Idioma extends Model
     	'nombre', 'noCursos',
     ];
 	
-	//CAMBIO EL DRIAGRAMA
-	
-	//public function alumnos() {
-	//	return $this->belongsToMany('App\Alumno', 'idiomas_alumnos');
-	//}
+	public function cursos() {
+		return $this->hasMany('App\Curso', 'curso_idiomas');
+	}
 
 }

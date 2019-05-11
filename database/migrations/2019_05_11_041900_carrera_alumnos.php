@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CarrerasAlumnos extends Migration
+class CarreraAlumnos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CarrerasAlumnos extends Migration
      */
     public function up()
     {
-        Schema::create('carreras_alumnos', function(Blueprint $table)
-        {
+        Schema::create('carrera_alumnos', function (Blueprint $table){
             $table->integer('carrera_id')->unsigned();
-           $table->foreign('carrera_id')->references('id')->on('carrera')->onDelete('cascade');
-
-           $table->integer('alumno_matricula')->unsigned();
-            $table->foreign('alumno_matricula')->references('matricula')->on('alumno')->onDelete('cascade');
+            $table->foreign('carrera_id')->references('id')->on('carreras')->onDelete('cascade');
+            $table->integer('alumno_id')->unsigned();
+            $table->foreign('alumno_id')->references('matricula')->on('alumnos')->onDelete('cascade');
         });
     }
 
@@ -31,6 +29,6 @@ class CarrerasAlumnos extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('carreras_alumnos');
+        Shema::dropIfExists('carrera_alumnos');
     }
 }

@@ -10,7 +10,11 @@ class Curso extends Model
         'horario', 'nivel', 'capacidad'
 	];
 
-	//public function cursos (){
-    //return $this->hasMany('App\Idioma', 'noUnico');
-    //}
+    public function alumnos(){
+        return $this->belongsToMany('App\Alumno', 'cursos_alumnos');
+     }
+
+     public function idiomas(){
+        return $this->belongsTo('App\Idioma', 'curso_idiomas');
+     }
 }

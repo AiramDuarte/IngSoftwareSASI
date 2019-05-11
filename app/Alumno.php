@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Alumno extends Model
 {
    protected $fillable = [
-   		'nombre', 'semestre', 'porcentajeCarrera','disponiblidad'
+   		'nombre', 'semestre', 'porcentajeCarrera','disponiblidad','idCarrera'
    ];
-
-   public function carreras(){
-      return $this->belongsToMany('App\Carrera', 'carrera_alumno');
+   
+   public function cursos(){
+      return $this->belongsToMany('App\Curso', 'cursos_alumnos');
    }
 
-   public function cursos(){
-      return $this->belongsToMany('App\Curso', 'curso_alumno');
+   public function carreras(){
+      return $this->belongsTo('App\Carrera', 'carrera_alumnos');
    }
 }

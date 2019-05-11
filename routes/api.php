@@ -21,13 +21,13 @@ Route::get('cursos', 'CursoController@listarCursos');
 Route::get('cursos/{curso}', 'CursoController@obtenerCurso');
 Route::post('cursos', 'CursoController@agregarCurso');
 Route::put('cursos/{curso}', 'CursoController@actualizarDatosCurso');
-Route::get('cursos/{curso}/idiomas', 'CursoController@obtenerIdiomasCurso');
+Route::get('cursos/{curso}/alumnos', 'CursoController@obtenerAlumnosCurso');
 //Metodos de Idioma
 Route::get('idiomas', 'IdiomaController@listarIdiomas');
 Route::get('idiomas/{idioma}', 'IdiomaController@obtenerIdioma');
 Route::post('idiomas', 'IdiomaController@agregarIdioma');
 Route::put('idiomas/{idioma}', 'IdiomaController@actualizarDatosIdioma');
-Route::get('idiomas/{idioma}/alumnos', 'IdiomaController@obtenerAlumnosIdioma');
+Route::get('idiomas/{idioma}/cursos', 'IdiomaController@obtenerCursosIdioma');
 //Metodos de Carrera
 Route::get('carreras', 'CarreraController@listarCarreras');
 Route::get('carreras/{carrera}', 'CarreraController@obtenerCarrera');

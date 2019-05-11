@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Curso;
-use App\Idioma;
+use App\Alumno;
 
 class CursoController extends Controller
 {
@@ -67,17 +67,17 @@ class CursoController extends Controller
 
 		return response()->json(['mensaje' => 'Datos actualizados con éxito']);
     }
-	public function obtenerIdiomasCurso($id) {
+	public function obtenerAlumnosCurso($id) {
     	$curso = curso::find($id);
 
     	if(!$curso) {
     		return response()->json(['mensaje' => 'No se encontró el recurso solicitado'], 404);
     	}
 
-    	if($curso->idiomas->isEmpty()) {
-    		return response()->json(['mensaje' => 'No se encontraron cursos asociados al idioma especificado'], 404);
+    	if($curso->alumnos->isEmpty()) {
+    		return response()->json(['mensaje' => 'No se encontraron cursos asociados para el alumno especificado'], 404);
     	}
 
-    	return response()->json($curso->idiomas, 200);
+    	return response()->json($curso->alumnos, 200);
     }
 }
