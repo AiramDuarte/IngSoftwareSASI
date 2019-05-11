@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CursosSeeder extends Seeder
+class IdiomasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class CursosSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Idioma::class, 10)->create();
     }
 }
