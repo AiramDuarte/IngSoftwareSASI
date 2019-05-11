@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -37,3 +38,11 @@ Route::get('carreras/{carrera}/alumnos', 'CarreraController@obtenerCarreraAlumno
 //metodos de alumno
 Route::get('alumnos', 'AlumnoController@listarAlumnos');
 Route::get('alumnos/{alumno}', 'AlumnoController@obtenerAlumno');
+
+//passport
+Route::post('login', 'API\UserController@login');
+Route::post('register', 'API\UserController@register');
+Route::group(['middleware' => 'auth:api'], function(){
+Route::post('details', 'API\UserController@details');
+});
+
