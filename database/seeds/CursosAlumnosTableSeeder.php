@@ -11,6 +11,8 @@ class CursosAlumnosTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Curso::all()->each(function($cursos){
+            $cursos->alumnos()->sync(Alumno::inRandomOrder()->first()->id);
+        });
     }
 }

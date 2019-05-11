@@ -11,6 +11,8 @@ class CarreraAlumnosTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Alumno::all()->each(function($alumnos){
+            $alumnos->carreras()->sync(Carrera::inRandomOrder()->first()->id);
+        });
     }
 }

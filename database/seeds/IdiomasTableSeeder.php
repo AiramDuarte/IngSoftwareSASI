@@ -11,6 +11,6 @@ class IdiomasTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Idioma::class, 10)->create();
     }
 }

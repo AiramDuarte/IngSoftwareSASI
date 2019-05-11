@@ -11,6 +11,8 @@ class CursoIdiomasTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Curso::all()->each(function($cursos){
+            $cursos->idiomas()->sync(Idioma::inRandomOrder()->first()->id);
+        });
     }
 }

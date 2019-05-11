@@ -11,6 +11,6 @@ class AlumnosTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Alumno::class, 10)->create();
     }
 }

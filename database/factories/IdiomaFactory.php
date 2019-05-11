@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Model::class, function (Faker $faker) {
     return [
-        //
+        'nombre' => $faker->name,
+        'noCursos' => $faker->numberBetween($min = 10, $max = 60),
     ];
 });
