@@ -15,7 +15,7 @@ class CursoIdiomas extends Migration
     {
         Schema::create('curso_idiomas', function (Blueprint $table){
 
-            $table->increments('id');
+            
             $table->integer('curso_id')->unsigned();
             $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
             $table->integer('idioma_id')->unsigned();

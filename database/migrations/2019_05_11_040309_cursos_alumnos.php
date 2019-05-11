@@ -14,7 +14,7 @@ class CursosAlumnos extends Migration
     public function up()
     {
         Schema::create('cursos_alumnos', function (Blueprint $table){
-            $table->increments('id');
+           
             $table->integer('curso_id')->unsigned();
             $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
             $table->integer('alumno_id')->unsigned();
