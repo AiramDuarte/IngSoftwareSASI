@@ -38,6 +38,8 @@ Route::get('carreras/{carrera}/alumnos', 'CarreraController@obtenerCarreraAlumno
 //metodos de alumno
 Route::get('alumnos', 'AlumnoController@listarAlumnos');
 Route::get('alumnos/{alumno}', 'AlumnoController@obtenerAlumno');
+Route::post('alumnos', 'AlumnoController@agregarAlumno');
+Route::put('alumnos/{alumno}', 'AlumnoController@actualizarDatosAlumnos');
 
 //passport
 Route::post('login', 'API\UserController@login');
