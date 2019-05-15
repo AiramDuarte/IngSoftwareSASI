@@ -10,24 +10,67 @@ class AlumnoController extends Controller
 {
     public function listarAlumnos() {
 
-    	$alumnos = Carrera::all();
+    	$alumno = Alumno::all();
 
-    	if($alumnos->isEmpty()) {
-    		return response()->json(['mensaje' => 'No se encuentran los alumnosregistrados'], 404);
+    	if($alumno->isEmpty()) {
+    		return response()->json(['mensaje' => 'No se encuentran los alumnos registrados'], 404);
     	}
 
-    	return response()->json($alumnos, 200);
+    	return response()->json($alumno, 200);
     }
 
 public function obtenerAlumno($matricula) {
 
-    	$alumno = Carrera::find($matricula);
+    	$alumno = Alumno::find($matricula);
 
     	if(!$alumno) {
     		return response()->json(['mensaje' => 'No se encontró el alumno'], 404);
     	}
 
     	return response()->json($alumno, 200);
+	}
+	public function agregarAlumno(Request $request) {
+    	$request->validate([
+			'nombre' => 'string|required',
+			'semestre' => 'integer|required',
+			'porcentajeCarrera' => 'float|required',
+			'disponiblidad' => 'string|required',
+    	]);
+
+    	$alumno = new Alumno([
+			'nombre' => 'string|required',
+			'semestre' => 'integer|required',
+			'porcentajeCarrera' => 'float|required',
+			'disponiblidad' => 'string|required',
+    	]);
+
+    	$alumno->save();
+
+    	return response()->json(['mensaje' => 'Datos agregados con éxito'], 201);
+	}
+	
+	public function actualizarDatosAlumnos(Request $request, $id) {
+    	$request->validate([
+    		'nombre' => 'string|required',
+			'semestre' => 'integer|required',
+			'porcentajeCarrera' => 'float|required',
+			'disponiblidad' => 'string|required',
+    	]);
+
+		$alumno = Alumnos::find($id);
+
+		if(!$alumno) {
+			return response()->json(['mensaje' => 'No se encontró el recurso solicitado'], 404);
+		}
+
+		$alumno->nombre = $request->nombre;
+        $alumno->semestre = $request->semestre;
+		$alumno->porcentajeCarrera = $request->porcentajeCarrera;
+		$alumno->disponiblidad = $request->disponiblidad;
+
+		$alumno->save();
+
+		return response()->json(['mensaje' => 'Datos actualizados con éxito']);
     }
 
 }
