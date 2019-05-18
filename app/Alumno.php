@@ -17,4 +17,7 @@ class Alumno extends Model
    public function carreras(){
       return $this->belongsTo('App\Carrera', 'carrera_alumnos');
    }
+    public function users(){
+      return $this->belongsTo('App\User', 'users_alumnos');
+   }
 }
