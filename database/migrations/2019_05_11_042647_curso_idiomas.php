@@ -20,6 +20,7 @@ class CursoIdiomas extends Migration
             $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
             $table->integer('idioma_id')->unsigned();
             $table->foreign('idioma_id')->references('id')->on('idiomas')->onDelete('cascade');
+            $table->string('Nivel-maximo');
         });
     }
 
@@ -30,7 +31,7 @@ class CursoIdiomas extends Migration
      */
     public function down()
     {
-        //
-        Shema::dropIfExists('curso_idiomas');
+        
+         Schema::dropIfExists('curso_idiomas');
     }
 }

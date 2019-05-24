@@ -29,6 +29,6 @@ class CarreraAlumnos extends Migration
     public function down()
     {
         //
-        Shema::dropIfExists('carrera_alumnos');
+        Schema::dropIfExists('carrera_alumnos');
     }
 }

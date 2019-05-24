@@ -19,6 +19,7 @@ class CursosAlumnos extends Migration
             $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
             $table->integer('alumno_id')->unsigned();
             $table->foreign('alumno_id')->references('matricula')->on('alumnos')->onDelete('cascade');
+           
         });
     }
 
@@ -30,6 +31,6 @@ class CursosAlumnos extends Migration
     public function down()
     {
         //
-        Shema::dropIfExists('cursos_alumnos');
+         Schema::dropIfExists('cursos_alumnos');
     }
 }

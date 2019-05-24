@@ -5,7 +5,7 @@ namespace App\Providers;
 use Laravel\Passport\Passport; 
 use Illuminate\Support\Facades\Gate; 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-//use Schema;
+//use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {

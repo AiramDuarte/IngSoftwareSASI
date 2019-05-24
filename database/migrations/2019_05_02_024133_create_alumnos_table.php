@@ -19,6 +19,8 @@ class CreateAlumnosTable extends Migration
             $table->integer('semestre');
             $table->float('porcentajeCarrera');
             $table->string('disponiblidad');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
     }
