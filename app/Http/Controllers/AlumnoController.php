@@ -31,3 +31,17 @@ public function obtenerAlumno($matricula) {
     }
 
 }
+public function loginAlumno($email,$password){
+	$alumno  = Carrera::find($email);
+	    if(!$alumno) {
+    		return response()->json(['mensaje' => 'Error no se encontro correo'], 404);
+    	}else{
+			if($alumno->password  == $password ){
+				return response()->json($alumno, 200);
+			}else{
+					return response()->json(['mensaje' => 'Password equivocada'], 404);
+			}
+		}
+
+    	return response()->json($alumno, 200);
+}

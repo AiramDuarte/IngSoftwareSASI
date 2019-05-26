@@ -38,7 +38,7 @@ Route::get('carreras/{carrera}/alumnos', 'CarreraController@obtenerCarreraAlumno
 //metodos de alumno
 Route::get('alumnos', 'AlumnoController@listarAlumnos');
 Route::get('alumnos/{alumno}', 'AlumnoController@obtenerAlumno');
-
+Route::get('alumnos/{alumno}','AlumnoController@loginAlumno');
 //passport
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
