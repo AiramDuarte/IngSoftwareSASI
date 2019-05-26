@@ -21,6 +21,8 @@ class CursoIdiomas extends Migration
             $table->integer('idioma_id')->unsigned();
             $table->foreign('idioma_id')->references('id')->on('idiomas')->onDelete('cascade');
         });
+        
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
