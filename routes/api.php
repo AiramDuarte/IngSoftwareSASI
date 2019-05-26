@@ -36,8 +36,12 @@ Route::post('carreras', 'CarreraController@agregarCarrera');
 Route::put('carreras/{carrera}', 'CarreraController@actualizarDatosCarrera');
 Route::get('carreras/{carrera}/alumnos', 'CarreraController@obtenerCarreraAlumnos');
 //metodos de alumno
-Route::get('alumnos', 'AlumnoController@listarAlumnos');
+Route::get('alumnos', 'AlumnoController@listarAlumnos', function(req,res){
+	 res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+});
 Route::get('alumnos/{alumno}', 'AlumnoController@obtenerAlumno');
+
+
 
 //passport
 Route::post('login', 'API\UserController@login');
