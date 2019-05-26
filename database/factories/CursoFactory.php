@@ -10,5 +10,6 @@ $factory->define(App\Curso::class, function (Faker $faker) {
         'horario' => $faker->word,
         'nivel' => $faker->word,
         'capacidad' => $faker->numberBetween($min = 10, $max = 60),
+        'idioma' => $faker->word,
     ];
 });

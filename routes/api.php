@@ -20,6 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Metodos de Curso
 Route::get('cursos', 'CursoController@listarCursos');
 Route::get('cursos/{curso}', 'CursoController@obtenerCurso');
+Route::get('cursos/{curso}', 'CursoController@obtenerNivel');
+Route::get('cursos/{curso}', 'CursoController@obtenerIdioma');
 Route::post('cursos', 'CursoController@agregarCurso');
 Route::put('cursos/{curso}', 'CursoController@actualizarDatosCurso');
 Route::get('cursos/{curso}/alumnos', 'CursoController@obtenerAlumnosCurso');

@@ -27,7 +27,29 @@ class CursoController extends Controller
     	}
 
     	return response()->json($curso, 200);
-    }
+	}
+
+	public function obtenerNivel($nivel) {
+
+    	$curso = Curso::find($nivel);
+
+    	if(!$curso) {
+    		return response()->json(['mensaje' => 'No se encontró el recurso solicitado'], 404);
+    	}
+
+    	return response()->json($curso, 200);
+	}
+
+	public function obtenerIdioma($idioma) {
+
+    	$curso = Curso::find($idioma);
+
+    	if(!$curso) {
+    		return response()->json(['mensaje' => 'No se encontró el recurso solicitado'], 404);
+    	}
+
+    	return response()->json($curso, 200);
+	}
 	
 	 public function agregarCurso(Request $request) {
     	$request->validate([
@@ -79,5 +101,5 @@ class CursoController extends Controller
     	}
 
     	return response()->json($curso->alumnos, 200);
-    }
+	}
 }

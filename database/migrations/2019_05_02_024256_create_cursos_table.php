@@ -17,6 +17,7 @@ class CreateCursosTable extends Migration
             $table->string('horario');
             $table->string('nivel');
             $table->integer('capacidad');
+            $table->string('idioma');
             $table->timestamps();
         });
     }
