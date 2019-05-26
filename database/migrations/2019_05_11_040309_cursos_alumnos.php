@@ -30,6 +30,6 @@ class CursosAlumnos extends Migration
     public function down()
     {
         //
-        Shema::dropIfExists('cursos_alumnos');
+        Schema::dropIfExists('cursos_alumnos');
     }
 }

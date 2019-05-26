@@ -13,16 +13,17 @@ class CursoIdiomas extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
-
+         
+		Schema::disableForeignKeyConstraints();
         Schema::create('curso_idiomas', function (Blueprint $table){
             $table->integer('curso_id')->unsigned();
             $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
             $table->integer('idioma_id')->unsigned();
             $table->foreign('idioma_id')->references('id')->on('idiomas')->onDelete('cascade');
         });
-        
         Schema::enableForeignKeyConstraints();
+        
+       
     }
 
     /**
@@ -32,7 +33,7 @@ class CursoIdiomas extends Migration
      */
     public function down()
     {
-        //
-        Shema::dropIfExists('curso_idiomas');
+        
+        Schema::dropIfExists('curso_idiomas');
     }
 }
